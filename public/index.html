@@ -8,13 +8,14 @@
 
 	<script lang="javascript">
 		window.addEventListener("load", () => {
-    const [navigationTiming] = performance.getEntriesByType("navigation");
-    if (navigationTiming) {
-        const domContentLoadedTime = navigationTiming.domContentLoadedEventEnd - navigationTiming.startTime;
-        console.log(`Time to DOMContentLoaded: ${domContentLoadedTime.toFixed(2)} ms`);
-    } else {
-        console.log("Navigation timing data is not available.");
-    }
+			const [navigationTiming] = performance.getEntriesByType("navigation");
+			if (navigationTiming) {
+				const domContentLoadedTime = navigationTiming.domContentLoadedEventEnd - navigationTiming.startTime;
+				console.log(`Time to DOMContentLoaded: ${domContentLoadedTime.toFixed(2)} ms`);
+			} else {
+				console.log("Navigation timing data is not available.");
+			}
+		});
 	</script>
 </head>
 
