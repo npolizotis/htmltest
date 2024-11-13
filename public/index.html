@@ -12,6 +12,21 @@
 			if (navigationTiming) {
 				const domContentLoadedTime = navigationTiming.domContentLoadedEventEnd - navigationTiming.startTime;
 				console.log(`Time to DOMContentLoaded: ${domContentLoadedTime.toFixed(2)} ms`);
+
+				// Create a new element to display the timing
+				const timingElement = document.createElement("div");
+				timingElement.textContent = `Time to DOMContentLoaded: ${domContentLoadedTime.toFixed(2)} ms`;
+				timingElement.style.position = "fixed";
+				timingElement.style.bottom = "10px";
+				timingElement.style.right = "10px";
+				timingElement.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+				timingElement.style.color = "#fff";
+				timingElement.style.padding = "8px";
+				timingElement.style.borderRadius = "4px";
+
+				// Append the element to the body
+				document.body.appendChild(timingElement);
+
 			} else {
 				console.log("Navigation timing data is not available.");
 			}
